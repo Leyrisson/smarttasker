@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema do framework (sem AppCompat/AndroidX). -->
+    <style name="TemaSmartTasker" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#12141c</item>
+        <item name="android:statusBarColor">#12141c</item>
+        <item name="android:navigationBarColor">#12141c</item>
+    </style>
+</resources>

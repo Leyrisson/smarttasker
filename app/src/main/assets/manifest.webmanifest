@@ -1,0 +1,12 @@
+{
+  "name": "SmartTasker",
+  "short_name": "SmartTasker",
+  "description": "Pronto para auxiliar em sua jornada de planejamento de tarefas!",
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#12141c",
+  "theme_color": "#12141c",
+  "lang": "pt-BR",
+  "icons": []
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#12141c" />
+  <title>SmartTasker</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="marca">
+      <span class="logo">✓</span>
+      <div>
+        <h1>SmartTasker</h1>
+        <p id="saudacao">Pronto para auxiliar em sua jornada de planejamento de tarefas!</p>
+      </div>
+    </div>
+    <div class="topo-plano" id="badge-plano">Grátis</div>
+  </header>
+
+  <main id="tela" class="tela"></main>
+
+  <nav class="abas" id="abas">
+    <button data-tab="tarefas" class="ativa"><span>🗒️</span>Tarefas</button>
+    <button data-tab="agenda"><span>📅</span>Agenda</button>
+    <button data-tab="foco"><span>⏱️</span>Foco</button>
+    <button data-tab="relatorios"><span>📊</span>Relatórios</button>
+    <button data-tab="moedas"><span>🪙</span>Moedas</button>
+    <button data-tab="ajustes"><span>⚙️</span>Ajustes</button>
+  </nav>
+
+  <button id="fab" class="fab" title="Nova tarefa">＋</button>
+
+  <div id="modal" class="modal oculto">
+    <div class="modal-caixa">
+      <h2 id="modal-titulo">Nova tarefa</h2>
+      <form id="form-tarefa">
+        <label>Título
+          <input id="f-titulo" type="text" required maxlength="120" placeholder="O que precisa ser feito?" />
+        </label>
+        <div class="linha">
+          <label>Categoria
+            <input id="f-categoria" type="text" list="lista-categorias" maxlength="40" placeholder="Geral" />
+            <datalist id="lista-categorias"></datalist>
+          </label>
+          <label>Prioridade
+            <select id="f-prioridade">
+              <option value="baixa">Baixa (+5)</option>
+              <option value="media" selected>Média (+10)</option>
+              <option value="alta">Alta (+20)</option>
+            </select>
+          </label>
+        </div>
+        <div class="linha">
+          <label>Vencimento
+            <input id="f-vencimento" type="datetime-local" />
+          </label>
+          <label>Recorrência
+            <select id="f-recorrencia">
+              <option value="nenhuma">Nenhuma</option>
+              <option value="diaria">Diária</option>
+              <option value="semanal">Semanal</option>
+              <option value="mensal">Mensal</option>
+            </select>
+          </label>
+        </div>
+        <label>Estimativa (min)
+          <input id="f-estimativa" type="number" min="5" step="5" value="30" />
+        </label>
+        <label>Notas
+          <textarea id="f-notas" rows="2" placeholder="Detalhes, links, passos..."></textarea>
+        </label>
+        <div class="modal-acoes">
+          <button type="button" class="btn-secundario" id="btn-cancelar">Cancelar</button>
+          <button type="submit" class="btn-primario">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast oculto"></div>
+
+  <script src="store.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
